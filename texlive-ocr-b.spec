@@ -1,3 +1,9 @@
+# revision 20852
+# category Package
+# catalog-ctan /fonts/ocr-b
+# catalog-date 2010-12-24 15:25:32 +0100
+# catalog-license other-free
+# catalog-version undef
 Name:		texlive-ocr-b
 Version:	20101224
 Release:	1
@@ -54,6 +60,7 @@ MetaFont programs for OCR-B at several sizes.
 %{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb8.tfm
 %{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb9.tfm
 %doc %{_texmfdistdir}/doc/fonts/ocr-b/README
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -64,3 +71,5 @@ MetaFont programs for OCR-B at several sizes.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
