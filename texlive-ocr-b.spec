@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-ocr-b
 Version:	20101224
-Release:	4
+Release:	5
 Summary:	Fonts for OCR-B
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ocr-b
