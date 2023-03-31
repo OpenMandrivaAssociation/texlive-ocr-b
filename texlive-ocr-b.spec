@@ -1,6 +1,6 @@
 Name:		texlive-ocr-b
 Version:	20852
-Release:	1
+Release:	2
 Summary:	Fonts for OCR-B
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ocr-b
