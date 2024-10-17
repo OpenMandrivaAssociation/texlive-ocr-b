@@ -3,7 +3,7 @@ Version:	20852
 Release:	2
 Summary:	Fonts for OCR-B
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/ocr-b
+URL:		https://www.ctan.org/tex-archive/fonts/ocr-b
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ocr-b.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ocr-b.doc.r%{version}.tar.xz
