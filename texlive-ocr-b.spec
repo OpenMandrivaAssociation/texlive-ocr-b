@@ -1,58 +1,19 @@
-Name:		texlive-ocr-b
-Version:	20852
-Release:	2
+%global tl_name ocr-b
+%global tl_revision 20852
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Fonts for OCR-B
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/ocr-b
-License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ocr-b.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ocr-b.doc.r%{version}.tar.xz
+License:	other-free
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ocr-b.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ocr-b.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-MetaFont programs for OCR-B at several sizes.
+Metafont source for OCR-B at several sizes.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10e.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10f.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10g.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10l.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10s.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb10x.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb5.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb6.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb7.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb8.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrb9.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrbdef.mf
-%{_texmfdistdir}/fonts/source/public/ocr-b/ocrbmac.mf
-%{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb10.tfm
-%{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb5.tfm
-%{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb6.tfm
-%{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb7.tfm
-%{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb8.tfm
-%{_texmfdistdir}/fonts/tfm/public/ocr-b/ocrb9.tfm
-%doc %{_texmfdistdir}/doc/fonts/ocr-b/README
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
